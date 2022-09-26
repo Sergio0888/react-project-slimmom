@@ -25,14 +25,6 @@ const Diary = () => {
     const summaryProducts = useSelector(getProducts);
     const { loading, error, eatenProducts, dayId, date } = summaryProducts;
 
-    // useEffect(() => {
-    //     if(eatenProducts.length > 1) {
-    //         localStorage.setItem('products', JSON.stringify(eatenProducts));
-    //     }
-    // })
-
-    console.log('text')
-
     const dispatch = useDispatch();
 
 
@@ -61,15 +53,12 @@ const Diary = () => {
           dispatch(removeProduct(data));
         },[dayId, dispatch]);
 
-    const getInfoDay = 
-    useCallback((data) => {
+    const getInfoDay = useCallback((data) => {
           dispatch(setNewDate(data));
           dispatch(dayInfo(data));
-        },[dispatch]);
+          // eslint-disable-next-line
+        },[]);
 
-    // const localProducts = JSON.parse(localStorage.getItem('products'));
-    // const checkItemsOfProducts = eatenProducts.length > 1;
-    // const arrayOfProducts = checkItemsOfProducts ? eatenProducts : localProducts;
 
     return (
         <div className={styles.box}>

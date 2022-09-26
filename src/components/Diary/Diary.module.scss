@@ -1,3 +1,6 @@
 .box {
   width: 620px;
+  @media (max-width: 480px) {
+    width: 100%;
+  }
 }
