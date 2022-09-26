@@ -9,6 +9,7 @@
   padding-bottom: 91px;
 
   @media (max-width: 1200px) {
+    flex-direction: column;
     background: url(../../images/background/back_for_tablet.png);
     background-position: 100% 100%;
     background-repeat: no-repeat;
@@ -16,7 +17,8 @@
   }
   @media (min-width: 1200px) {
     width: 70%;
-    padding-left: 40px;
+    padding-top: 80px;
+    padding-left: 32px;
     flex-direction: column;
   }
   @media (max-width: 480px) {

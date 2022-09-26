@@ -2,12 +2,37 @@
 
 .CalculatorPageWrapper {
   display: flex;
+ 
+  @media (min-width: 1200px) {
+    justify-content: space-between;
+  }
+  @media (max-width: 1200px) {
+    flex-direction: column;;
+  }
+}
+
+.backgr {
+  @media (min-width: 1200px) {
+    background-image: linear-gradient(90deg, #fff 60%, #f0f1f3 0);
+  }
 }
 
 .CalculatorLeftPart {
   padding-top: 150px;
   padding-left: 16px;
   padding-right: 139px;
+  @media (min-width: 1200px) {
+    padding-bottom: 90px;
+
+  }
+  @media (max-width: 1200px) {
+    padding-left: 32px;
+    padding-bottom: 48px;
+    padding-top: 100px;
+  }
+  @media (max-width: 480px) {
+    padding-top: 50px;
+  }
 }
 
 .text {
@@ -15,9 +40,16 @@
   line-height: 1.4;
   margin-bottom: 32px;
 
-  @include mixins.mq(tablet) {
+  @media (min-width: 480px) and (max-width: 1200px)  {
     font-size: 34px;
     margin-bottom: 68px;
     max-width: 530px;
+  }
+  @media (max-width: 480px) {
+    font-family: 'Verdana';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
   }
 }
