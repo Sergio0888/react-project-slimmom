@@ -1,0 +1,11 @@
+.box {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 83px;
+  bottom: 0;
+  background-color: var(--burger-menu-bg-color);
+  text-align: center;
+  padding: 100px 0 15px;
+  z-index: 999;
+}

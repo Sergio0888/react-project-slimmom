@@ -1,0 +1,36 @@
+@import-normalize; /* bring in normalize.css styles */
+
+:root {
+  --primary-text-color: rgba(33, 33, 33, 1);
+  --seondary-text-color: rgba(155, 159, 170, 1);
+  --accent-color: rgba(252, 132, 45, 1);
+  --sidebar-bg-color: rgba(240, 241, 243, 1);
+  --burger-menu-bg-color: rgba(38, 64, 97, 1);
+}
+
+body {
+  margin: 0;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 14px;
+  line-height: 1;
+  font-weight: 700;
+}
+
+ul,
+p {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  padding: 0 15px;
+
+  @media screen and (min-width: 768px) {
+    padding: 0 80px;
+  }
+
+  @media screen and (min-width: 1280px) {
+    padding: 0 32px;
+  }
+}

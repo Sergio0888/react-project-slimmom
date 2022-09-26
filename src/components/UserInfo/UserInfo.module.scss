@@ -1,0 +1,48 @@
+@use '../../sass/shared/mixins';
+
+.box {
+  margin-right: 15px;
+  // margin-left: auto;
+}
+
+
+.box {
+  @include mixins.mq(mobile) {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    max-width: 200px;
+    margin-left: auto;
+    position: relative;
+    
+    
+
+    & p {
+      margin-right: 32px;
+    }
+
+    & p::before {
+      position: absolute;
+      content: '';
+      width: 2px;
+      height: 25px;
+      background-color: var(--seondary-text-color);
+      right: 39px;
+      bottom: -5px;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      margin-right: 50px;
+    }
+  }
+
+  @include mixins.mq(mobile-only) {
+      padding: 0 20px;
+
+      & p::before {
+      right: 60px;
+    }
+    }
+}

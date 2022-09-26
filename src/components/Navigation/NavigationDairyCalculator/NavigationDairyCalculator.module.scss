@@ -1,0 +1,80 @@
+@use '../../../sass/shared/mixins';
+
+.nav {
+  &__link {
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--seondary-text-color);
+    transition: color 0.3s;
+  }
+
+  &__link:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  @include mixins.mq(mobile) {
+    position: relative;
+
+    &__link {
+      display: block;
+    }
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: -13px;
+      left: -20px;
+      width: 2px;
+      height: 32px;
+      background-color: var(--seondary-text-color);
+    }
+
+    &__link:hover,
+    &__link:focus {
+      color: #fff;
+      background-size: 100% 2px;
+      transition: color 0.3s;
+    }
+
+    &__link.active {
+      color: #fff;
+    }
+  }
+
+  @include mixins.mq(desktop) {
+    margin-left: 40px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: -13px;
+      left: -20px;
+      width: 2px;
+      height: 32px;
+      background-color: var(--seondary-text-color);
+    }
+
+    &__link {
+      display: inline-block;
+    }
+
+    &__link:not(:last-child) {
+      margin-right: 15px;
+    }
+
+    &__link:hover,
+    &__link:focus {
+      color: var(--accent-color);
+      background-size: 100% 2px;
+      transition: color 0.3s;
+    }
+
+    &__link.active {
+      color: var(--primary-text-color);
+    }
+  }
+}

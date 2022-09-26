@@ -1,16 +1,25 @@
+import UserRoutes from '../routes/routes';
+import Header from './Header/Header';
+import { isSid } from 'redux/auth/authSelectors';
+import { refresh } from 'redux/auth/authOperations';
+
+import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 export const App = () => {
+  const sid = useSelector(isSid);
+  const dispatch = useDispatch();
+
+  // useEffect(() => {
+  //   dispatch(refresh({ sid }));
+
+  //   // eslint-disable-next-line
+  // }, [dispatch]);
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <UserRoutes />
+    </>
   );
 };

@@ -1,0 +1,9 @@
+@use '../../../sass/shared/mixins';
+
+.wrapper {
+  @include mixins.mq(mobile-only) {
+    padding: 15px 0;
+    background-color: #EFF1F3;
+  }
+}
+

@@ -1,0 +1,20 @@
+@use '../../sass/shared/mixins';
+
+.header {
+  padding: 20px 0 16px;
+
+  @include mixins.mq(tablet-only) {
+    border-bottom: 2px solid #e0e0e0;
+  }
+}
+
+.box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  @include mixins.mq(desktop) {
+    justify-content: start;
+    align-items: baseline;
+  }
+}

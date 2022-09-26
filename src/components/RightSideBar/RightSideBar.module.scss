@@ -1,0 +1,58 @@
+@use '../../sass/shared/mixins';
+
+.sidebar {
+  background-color: var(--sidebar-bg-color);
+  padding-top: 150px;
+  padding-left: 94px;
+}
+
+.box {
+  display: flex;
+}
+
+.item {
+  
+}
+
+.summary {
+  margin-bottom: 40px;
+}
+.summary__title {
+  margin-bottom: 30px;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+}
+
+.summary__subtitle {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: #9b9faa;
+}
+
+.summary__list,
+.list,
+.prodList {
+  color: var(--seondary-text-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  width: 288px;
+}
+
+.summary__listItem:not(:last-child),
+.item:not(:last-child), 
+.prodItem:not(:last-child) {
+    margin-bottom: 10px;
+  }
+  
+
+  
+
+
+
+
+

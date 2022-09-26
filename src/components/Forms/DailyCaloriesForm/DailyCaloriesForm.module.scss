@@ -1,0 +1,268 @@
+@use '../../../sass/shared/mixins';
+
+.form__block {
+  margin-bottom: 40px;
+}
+
+.form__width {
+  width: 100%;
+  @include mixins.mq(tablet) {
+    width: 382px;
+    display: flex;
+  }
+
+  @include mixins.mq(mobile-only) {
+    max-width: 400px;
+  }
+}
+
+.form__half {
+  @include mixins.mq(tablet) {
+    margin-right: 32px;
+  }
+}
+
+.form__block {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.form__text {
+  display: block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: var(--seondary-text-color);
+
+  margin-bottom: 35px;
+
+  transition: color 0.4s;
+  position: relative;
+}
+
+.form__text::after {
+  position: absolute;
+  display: block;
+  bottom: -21px;
+  opacity: 0.4;
+  content: '';
+  width: 100%;
+  border-bottom: 1px solid var(--seondary-text-color);
+  @include mixins.mq(mobile-only) {
+    border-bottom: none;
+  }
+}
+
+.form__btn__active {
+  padding: 13px 48px;
+  min-width: 176px;
+  margin-top: 60px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border: 2px solid #fc842d;
+  border-radius: 30px;
+  cursor: pointer;
+
+  color: #ffffff;
+  background-color: var(--accent-color);
+
+  @include mixins.mq(tablet) {
+    text-align: start;
+    display: block;
+  }
+
+  @include mixins.mq(desktop) {
+    display: inline-block;
+    text-align: center;
+    margin-right: 300px;
+  }
+}
+
+.form__btn__secondary {
+  padding: 13px 34px;
+  min-width: 176px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border-radius: 30px;
+
+  border: 2px solid #fc842d;
+  border-radius: 30px;
+  cursor: pointer;
+
+  color: var(--accent-color);
+  background-color: #ffffff;
+}
+
+.from__block__btn {
+  text-align: center;
+}
+
+.form__checkboxSet {
+  display: flex;
+  align-items: center;
+}
+
+.form__check {
+  color: var(--seondary-text-color);
+  margin-left: 8px;
+}
+
+.form__check:not(:last-child) {
+  margin-right: 24px;
+}
+
+/* Modal */
+
+.modal_title {
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 26px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-align: center;
+
+  @include mixins.mq(mobile) {
+    text-align: start;
+    padding-top: 40px;
+  }
+
+  @include mixins.mq(tablet) {
+    font-size: 26px;
+    line-height: 32px;
+    padding-top: 64px;
+    text-align: center;
+  }
+
+  @include mixins.mq(desktop) {
+    font-size: 26px;
+    line-height: 32px;
+    max-width: 500px;
+    display: -webkit-inline-box;
+    text-align: center;
+  }
+}
+
+.modal_foods {
+  text-align: start;
+
+  @include mixins.mq(desktop) {
+    text-align: center;
+  }
+
+  @include mixins.mq(tablet) {
+    text-align: center;
+    padding: 0 91px;
+  }
+}
+
+.modal_caloriesNumber {
+  font-weight: bold;
+  font-size: 48px;
+  line-height: 58px;
+  text-align: center;
+  letter-spacing: 0.04em;
+  color: #264061;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 12px;
+  display: inline-block;
+}
+
+.modal_calories {
+  font-size: 16px;
+}
+
+.modal_subTitle {
+  text-align: start;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+}
+
+.modal_list {
+  text-align: start;
+  color: var(--seondary-text-color);
+  font-weight: 400;
+  overflow: auto;
+  margin-bottom: 40px;
+  max-height: 90px;
+}
+
+.modal_list__element {
+  text-align: left;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.modal_button {
+  padding: 13px 25px;
+  min-width: 210px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border: 2px solid #fc842d;
+  border-radius: 30px;
+  cursor: pointer;
+
+  color: #ffffff;
+  background-color: var(--accent-color);
+
+  @include mixins.mq(tablet) {
+    display: block;
+  }
+
+  @include mixins.mq(tablet) {
+    display: inline-block;
+  }
+}
+
+.modal_button_style {
+  display: flex;
+  justify-content: center;
+}
+
+.modal_closeBtn {
+  padding: 0;
+  position: absolute;
+  width: 18px;
+  height: 12px;
+  top: -22px;
+  left: 15px;
+  border: none;
+  background-color: #eff1f3;
+  background-image: url('../../../images/modal/undo2.svg');
+  background-repeat: no-repeat;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    left: auto;
+    right: 24.17px;
+    top: 24.17px;
+    background-image: url('../../../images/modal/cross.svg');
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .modal_list {
+    display: grid;
+    justify-content: center;
+  }
+}
