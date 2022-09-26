@@ -11,11 +11,11 @@ export const App = () => {
   const sid = useSelector(isSid);
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(refresh({ sid }));
+  useEffect(() => {
+    dispatch(refresh({ sid }));
 
-  //   // eslint-disable-next-line
-  // }, [dispatch]);
+    // eslint-disable-next-line
+  }, [dispatch]);
 
   return (
     <>

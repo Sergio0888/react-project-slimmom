@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import initialState from "./summary-initialState";
 import { pending, rejected } from "../../shared/other/pendReject";
-import { getUser, userLogout } from "../auth/authOperations";
+import { getUser } from "../auth/authOperations";
 import { addProduct, dayInfo, removeProduct } from "./summary-operations";
 import { makeRandomProducts } from "../../pages/CalculatorPage/CalculatorPage";
-// import { loginOldUser } from "../auth/auth-operations";
+
 
 const summarySlice = createSlice({
   name: "summary",
@@ -38,20 +38,7 @@ const summarySlice = createSlice({
         notAllowedProducts: products,
       };
     },
-    // [loginOldUser.fulfilled]: (store, { payload }) => {
-    //   if (payload.user?.userData?.notAllowedProducts?.length > 0) {
-    //     const products = makeRandomProducts(
-    //       payload.user.userData.notAllowedProducts
-    //     );
-    //     return {
-    //       ...store,
-    //       loading: false,
-    //       notAllowedProducts: products,
-    //     };
-    //   }
-    // },
-    // [userLogout.fulfilled]: () => initialState,
-
+    
     [dayInfo.pending]: pending,
     [dayInfo.rejected]: rejected,
     [dayInfo.fulfilled]: (store, { payload }) => {

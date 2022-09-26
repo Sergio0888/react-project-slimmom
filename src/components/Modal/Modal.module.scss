@@ -10,12 +10,19 @@
     width: 100vw;
     height: 100vh;
     
-    background: rgba(33, 33, 33, 0.12);
+    background: rgba(239, 241, 243, 1)
 }
 
 @include mixins.mq(tablet) {
     .backdrop {
         top: 0;
+        background: rgba(33, 33, 33, 0.12);
+    }
+}
+
+@include mixins.mq(tablet) {
+    .backdrop {
+        top:0;
         background: rgba(33, 33, 33, 0.12);
     }
 }

@@ -13,6 +13,7 @@
 
   @include mixins.mq(mobile-only) {
     max-width: 400px;
+    padding-top: 32px;
   }
 }
 
@@ -184,7 +185,7 @@
 }
 
 .modal_subTitle {
-  text-align: start;
+  text-align: center;
   font-weight: bold;
   font-size: 14px;
   line-height: 17px;
@@ -198,7 +199,7 @@
   font-weight: 400;
   overflow: auto;
   margin-bottom: 40px;
-  max-height: 90px;
+  max-height: 135px;
 }
 
 .modal_list__element {
@@ -247,8 +248,8 @@
   top: -22px;
   left: 15px;
   border: none;
-  background-color: #eff1f3;
-  background-image: url('../../../images/modal/undo2.svg');
+  // background-color: #eff1f3;
+  
   background-repeat: no-repeat;
   cursor: pointer;
 
@@ -262,7 +263,8 @@
 
 @media screen and (min-width: 768px) {
   .modal_list {
-    display: grid;
+    display: inline-block;
     justify-content: center;
+    width: 250px;
   }
 }
