@@ -1,7 +1,7 @@
 import s from './MainPage.module.scss';
 import Header from 'components/Header/Header';
 import { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+
 import { useDispatch } from 'react-redux';
 import { getDailyRateInGeneral } from 'shared/api/daily';
 import ModalText from '../../shared/components/ModalText';
@@ -37,11 +37,11 @@ const errorState = (prevState, error) => ({
 
 const MainPage = () => {
   const [state, setState] = useState(initialState);
-  const { calories, notAllowedProducts, loading, error, isModal } = state;
-  const navigate = useNavigate();
+  const { calories, notAllowedProducts, isModal } = state;
+
   const isModalOpen = useModal();
   const dispatch = useDispatch();
- console.log(notAllowedProducts);
+
   const handleClick = async data => {
     setState(loadingState);
     const dataValuesToNumbers = {};
@@ -80,7 +80,6 @@ const MainPage = () => {
   const modalButtonClick = () => {
     dispatch(toggleModalRedux());
     setState(prevState => ({ ...prevState, isModal: false }));
-    // return navigate('/register');
   };
 
   return (
@@ -101,18 +100,6 @@ const MainPage = () => {
         )}
       </div>
     </>
-  );
-
-  return (
-    <section>
-      <div className={s.wrapper}>
-        <div className="container">
-          <p className={s.text}>
-            Calculate your daily calorie intake right now
-          </p>
-        </div>
-      </div>
-    </section>
   );
 };
 

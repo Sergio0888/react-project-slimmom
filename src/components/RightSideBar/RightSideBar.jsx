@@ -1,4 +1,4 @@
-import { useMediaPredicate } from 'react-media-hook';
+
 import { useSelector } from 'react-redux';
 
 import s from './RightSideBar.module.scss';
