@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 
 import PublicRoute from 'components/PublicRoute/PublicRoute';
 import PrivateRoute from 'components/PrivateRoute/PrivateRoute';
+import { Loader } from 'components/Loader/Loader';
 
 const MainPage = lazy(() => import('pages/MainPage/MainPage'));
 const LoginPage = lazy(() => import('pages/LoginPage/LoginPage'));
@@ -17,7 +18,7 @@ const CalculatorPage = lazy(() =>
 
 const UserRoutes = () => {
   return (
-    <Suspense fallback={<p>Load page...</p>}>
+    <Suspense fallback={<Loader/>}>
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route element={<PublicRoute />}>

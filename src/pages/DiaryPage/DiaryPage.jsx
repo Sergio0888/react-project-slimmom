@@ -4,7 +4,7 @@ import { RightSideBar } from 'components/RightSideBar/RightSideBar';
 import Header from 'components/Header/Header';
 const DiaryPage = () => {
   return (
-    <>
+    <div>
       <div className={styles.HeaderWrapper}>
         <Header />
       </div>
@@ -18,7 +18,7 @@ const DiaryPage = () => {
           <RightSideBar />
         </aside>
       </div>
-    </>
+    </div>
   );
 };
 

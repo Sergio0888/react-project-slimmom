@@ -5,4 +5,13 @@
   font-weight: 700;
   padding: 0;
   cursor: pointer;
+
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus{
+    transition: color 0.3s;
+    color: var(--accent-color);
+  }
 }
+

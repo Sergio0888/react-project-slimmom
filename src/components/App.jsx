@@ -1,5 +1,4 @@
 import UserRoutes from '../routes/routes';
-import Header from './Header/Header';
 import { isSid } from 'redux/auth/authSelectors';
 import { refresh } from 'redux/auth/authOperations';
 
