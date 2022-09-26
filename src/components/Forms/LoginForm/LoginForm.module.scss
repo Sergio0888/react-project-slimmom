@@ -1,0 +1,113 @@
+@use '../../../sass/shared/mixins';
+
+.form__width {
+  width: 100%;
+  @include mixins.mq(tablet) {
+    width: 382px;
+  }
+}
+
+.form__block {
+  display: flex;
+  flex-direction: column-reverse;
+
+  &:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
+.form__label {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  margin-bottom: 10px;
+
+  color: var(--seondary-text-color);
+}
+
+.form__input {
+  width: 100%;
+  padding: 0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #e0e0e0;
+
+  @include mixins.mq(tablet) {
+    width: 239px;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid (var(--accent-color));
+  }
+
+  &:focus + label {
+    color: var(--accent-color);
+  }
+}
+
+input {
+  font-family: Verdana;
+  letter-spacing: 0.05em;
+}
+
+.form__btn__active {
+  padding: 13px 48px;
+  min-width: 176px;
+  margin-bottom: 20px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border: 2px solid #fc842d;
+  border-radius: 30px;
+  cursor: pointer;
+
+  color: #ffffff;
+  background-color: var(--accent-color);
+
+  @include mixins.mq(tablet) {
+    margin-bottom: 0;
+    margin-right: 40px;
+  }
+}
+
+.form__btn__secondary {
+  padding: 13px 34px;
+  min-width: 176px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border-radius: 30px;
+
+  border: 2px solid #fc842d;
+  border-radius: 30px;
+  cursor: pointer;
+
+  color: var(--accent-color);
+  background-color: #ffffff;
+}
+
+.from__block__btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 60px;
+
+  @include mixins.mq(tablet) {
+    display: inline-block;
+  }
+}

@@ -1,0 +1,45 @@
+@use '../../../sass/shared/mixins';
+
+.nav {
+  @include mixins.mq(desktop) {
+    margin-left: 40px;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      content: '';
+      top: -13px;
+      left: -20px;
+      width: 2px;
+      height: 32px;
+      background-color: var(--seondary-text-color);
+    }
+  }
+}
+
+.nav .nav__link {
+  font-family: 'Gotham Pro';
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color: var(--seondary-text-color);
+  transition: color 0.3s;
+}
+
+.nav__link:not(:last-child) {
+  margin-right: 15px;
+}
+
+.nav__link:hover,
+.nav__link:focus {
+  color: var(--accent-color);
+  background-size: 100% 2px;
+  transition: color 0.3s;
+}
+
+.nav__link.active {
+  color: var(--primary-text-color);
+}

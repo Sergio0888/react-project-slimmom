@@ -1,0 +1,40 @@
+@use '../../../sass/shared/mixins';
+
+.form__label,
+.form__text {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: var(--seondary-text-color);
+  transition: color 0.4s;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #e0e0e0;
+  color: var(--seondary-text-color);
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 0.4s;
+
+  @include mixins.mq(tablet) {
+    width: 239px;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid (var(--accent-color));
+  }
+}
+
+.form__input:focus ~ label {
+  color: var(--accent-color);
+}
+

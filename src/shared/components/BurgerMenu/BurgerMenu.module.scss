@@ -1,0 +1,22 @@
+@use '../../../sass/shared/mixins';
+
+.btn {
+  border: none;
+  background-color: inherit;
+  cursor: pointer;
+
+  @include mixins.mq(tablet-only) {
+    margin-left: 50px;
+  }
+}
+
+.line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: var(--primary-text-color);
+}
+
+.line:not(:last-child) {
+  margin-bottom: 3px;
+}

@@ -1,0 +1,151 @@
+@use '../../../sass/shared/mixins';
+
+.form__block:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.form__width {
+  width: 100%;
+  @include mixins.mq(tablet) {
+    width: 382px;
+    display: flex;
+  }
+}
+
+.form__half {
+  margin-right: 32px;
+}
+
+.form__block {
+  display: flex;
+  flex-direction: column-reverse;
+  margin-bottom: 40px;
+}
+
+.form__label,
+.form__text {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  color: var(--seondary-text-color);
+  transition: color 0.4s;
+  margin-bottom: 10px;
+}
+
+.form__input {
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid #e0e0e0;
+  color: var(--seondary-text-color);
+  font-size: 18px;
+  font-weight: 700;
+  transition: all 0.4s;
+
+  @include mixins.mq(tablet) {
+    width: 239px;
+  }
+
+  &:focus {
+    outline: none;
+    border-bottom: 1px solid (var(--accent-color));
+  }
+}
+
+.form__input:focus ~ label {
+  color: var(--accent-color);
+}
+
+.form__btn__active {
+  padding: 13px 48px;
+  min-width: 176px;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border: 2px solid #fc842d;
+  border-radius: 30px;
+  cursor: pointer;
+
+  color: #ffffff;
+  background-color: var(--accent-color);
+
+  @include mixins.mq(tablet) {
+    display: block;
+  }
+}
+
+.form__btn__secondary {
+  padding: 13px 34px;
+  min-width: 176px;
+
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-align: center;
+
+  box-shadow: 0px 4px 10px rgba(252, 132, 45, 0.5);
+  border-radius: 30px;
+
+  border: 2px solid #fc842d;
+  border-radius: 30px;
+  cursor: pointer;
+
+  color: var(--accent-color);
+  background-color: #ffffff;
+}
+
+.from__block__btn {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.form__text {
+  display: block;
+}
+
+.input {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+}
+
+.input::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: scale(0);
+  box-shadow: inset 10px 10px #fc842d;
+}
+
+.input:checked::before {
+  transform: scale(1);
+}
+
+.form__checkboxSet {
+  display: flex;
+  align-items: center;
+}
+
+.form__check {
+  color: var(--seondary-text-color);
+  margin-left: 8px;
+}
+
+.form__check:not(:last-child) {
+  margin-right: 24px;
+}

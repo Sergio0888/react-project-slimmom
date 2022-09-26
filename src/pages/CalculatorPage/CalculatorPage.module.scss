@@ -1,0 +1,23 @@
+@use '../../sass/shared/mixins';
+
+.CalculatorPageWrapper {
+  display: flex;
+}
+
+.CalculatorLeftPart {
+  padding-top: 150px;
+  padding-left: 16px;
+  padding-right: 139px;
+}
+
+.text {
+  font-size: 18px;
+  line-height: 1.4;
+  margin-bottom: 32px;
+
+  @include mixins.mq(tablet) {
+    font-size: 34px;
+    margin-bottom: 68px;
+    max-width: 530px;
+  }
+}
