@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import CircleButton from "../CircleButton/CircleButton";
-import products from "../../products"
+import products from "../../products";
 
 import styles from "./TabletForm.module.scss"
 
-const TabletForm = ({onSubmit, isMobile, children}) => {
+const TabletForm = ({onSubmit, isMobile, children, onClickModal}) => {
+
 
     const [input, setInput] = useState('');
     const [weight, setWeight] = useState('');
@@ -38,6 +39,9 @@ const TabletForm = ({onSubmit, isMobile, children}) => {
     const handleSubmit = e => {
         e.preventDefault()
         onSubmit(input, weight)
+        if(onClickModal) {
+            onClickModal()
+        }
         return (
             setInput(''),
             setWeight('')

@@ -8,7 +8,7 @@ export const register = createAsyncThunk(
     try {
       const response = await api.getRegister(data);
       Notiflix.Notify.success(
-        `Hi ${data.username} ! You have successfully registered .`
+        `Hi ${data.username} ! You have successfully registered`
       );
       return response;
     } catch (error) {
@@ -30,7 +30,7 @@ export const login = createAsyncThunk(
       return response;
     } catch (error) {
       Notiflix.Notify.warning(
-        `Sorry you didn't sign in. Please check your "${data.email}" or password "${data.password}"`
+       ` Sorry you didn't sign in. Please check your "${data.email}" or password "${data.password}`
       );
       return rejectWithValue(error.message);
     }
@@ -38,20 +38,37 @@ export const login = createAsyncThunk(
 );
 
 export const getUser = createAsyncThunk(
-  'auth/current',
-  async (_, { rejectWithValue, getState }) => {
+  'auth/get/user',
+  async (accessToken, { rejectWithValue }) => {
     try {
-      const { auth } = getState();
-      const result = await api.getCurrentUser(auth.token);
-      return result;
+      const data = await api.getCurrentUser(accessToken);
+      return data;
     } catch (error) {
-      return rejectWithValue(error);
+      return rejectWithValue(error.message);
+    }
+  }
+);
+
+export const refresh = createAsyncThunk(
+  'auth/refresh',
+  async (sid, { rejectWithValue, getState, dispatch }) => {
+    const {
+      auth: { refreshToken },
+    } = getState();
+
+    try {
+      const response = await api.getRefresh(sid, refreshToken);
+      const { newAccessToken } = response;
+      dispatch(getUser(newAccessToken));
+      return response;
+    } catch (error) {
+      return rejectWithValue(error.message);
     }
   },
   {
     condition: (_, { getState }) => {
       const { auth } = getState();
-      if (!auth.token) {
+      if (!auth.sid) {
         return false;
       }
     },
@@ -71,4 +88,3 @@ export const getLogout = createAsyncThunk(
     }
   }
 );
-

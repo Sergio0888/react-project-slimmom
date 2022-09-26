@@ -13,5 +13,9 @@ export const getErrorLoadingSummary = (store) => {
 };
 
 export const getFoodNotRecommended = (store) => {
-  return store.auth.user.user.userData.notAllowedProducts;
+  return store.auth?.user?.userData?.notAllowedProducts;
 };
+
+export const getDayKcal = (store) => {
+  return store.summary.summary
+}

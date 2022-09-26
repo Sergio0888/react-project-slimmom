@@ -33,4 +33,7 @@
     bottom: -12px;
     right: -116px;
   }
+  @media (max-width: 480px) {
+    right: 0;
+  }
 }
