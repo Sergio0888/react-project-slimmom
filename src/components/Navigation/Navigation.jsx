@@ -12,7 +12,7 @@ import BurgerMenu from 'shared/components/BurgerMenu/BurgerMenu';
 import s from './Navigation.module.scss';
 import NavigationMobile from './NavigationMobile/NavigationMobile';
 import BurgerNav from './BurgerNav/BurgerNav';
-import UserInfo from 'components/UserInfo/UserInfo';
+
 
 const Navigation = () => {
   const [modalMenu, setModalMenu] = useState(false);

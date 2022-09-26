@@ -1,8 +1,8 @@
 import { RightSideBar } from 'components/RightSideBar/RightSideBar';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router';
-import { getUserId, isLogin } from 'redux/auth/authSelectors';
+
+import { getUserId } from 'redux/auth/authSelectors';
 import { getDailyRateForUser } from 'shared/api/daily';
 import { updateSummaryAndnotAllowedProducts } from '../../redux/summary/summary-slice';
 import Header from 'components/Header/Header';
@@ -31,17 +31,14 @@ export const makeRandomProducts = arr => {
 };
 
 const CalculatorPage = () => {
-  const [state, setState] = useState(initialState);
-  // const { calories, notAllowedProducts, isModal, loading, error } = state;
-  const isLoginTrue = useSelector(isLogin);
-
+  const [ setState] = useState(initialState);
+  
   const userId = useSelector(getUserId);
-  const navigate = useNavigate();
+
   const dispatch = useDispatch();
 
   const handleClick = async data => {
-    console.log(data);
-    // setState(loadingState);
+    
     const dataValuesToNumbers = {};
     Object.entries(data).forEach(([key, value]) => {
       dataValuesToNumbers[key] = Number(value);

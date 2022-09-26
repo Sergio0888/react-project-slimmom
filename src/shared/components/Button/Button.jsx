@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import s from './button.module.scss';
 
 const Button = props => {
-  const { type, text, onClick, white } = props;
+  const { type, text, onClick } = props;
   const setClass = () => {
     return s.btn;
   };

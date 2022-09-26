@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-import { register, login, refresh, getLogout } from './authOperations';
+import { register, login, getLogout } from './authOperations';
 import { pending, rejected } from '../../shared/utils/pendingRejected';
 
 
