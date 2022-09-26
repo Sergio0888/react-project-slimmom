@@ -10,14 +10,16 @@ const DiaryAddProductForm = ({isMobile, onSubmit}) => {
     const [modal, setModal] = useState(false);
 
     const onModal = () => {
-        setModal(true)
+        setModal(prevState => (
+            !prevState
+        ))
     }
 
     return (
         <div>
             {isMobile ? <div className={styles.box}>
                     <CircleButton type="button" onClick={onModal} />
-                {modal && <Modal onSubmit={onSubmit} />}
+                {modal && <Modal onClickModal={onModal} onSubmit={onSubmit} />}
             </div>: <TabletForm onSubmit={onSubmit}/>}
         </div>
         

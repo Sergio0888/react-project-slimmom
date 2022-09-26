@@ -31,7 +31,7 @@ export const makeRandomProducts = arr => {
 };
 
 const CalculatorPage = () => {
-  const [ setState] = useState(initialState);
+  const [state, setState] = useState(initialState);
   
   const userId = useSelector(getUserId);
 
