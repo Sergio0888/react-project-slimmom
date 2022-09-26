@@ -90,7 +90,7 @@ const MainPage = () => {
           <DailyCaloriesForm onSubmit={handleClick} />
         </div>
         {isModalOpen && (
-          <Modal>
+          <Modal onClose={modalButtonClick}>
             <ModalText
               calories={calories}
               list={notAllowedProducts}
