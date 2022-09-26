@@ -31,6 +31,8 @@ const Diary = () => {
     //     }
     // })
 
+    console.log('text')
+
     const dispatch = useDispatch();
 
 
