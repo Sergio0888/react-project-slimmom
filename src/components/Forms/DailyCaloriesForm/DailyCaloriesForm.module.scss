@@ -78,8 +78,7 @@
 
   @include mixins.mq(desktop) {
     display: inline-block;
-    text-align: center;
-    margin-right: 300px;
+    margin-top: 20px;
   }
 }
 
@@ -106,6 +105,11 @@
 
 .from__block__btn {
   text-align: center;
+  @media (min-width: 1200px) {
+    display: flex;
+    justify-content: flex-end;
+    width: 500px;
+  }
 }
 
 .form__checkboxSet {

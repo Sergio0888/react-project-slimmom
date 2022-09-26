@@ -68,7 +68,7 @@ const CalculatorPage = () => {
   };
 
   return (
-    <>
+    <div className={s.backgr}>
       <Header />
       <section className={s.CalculatorPageWrapper}>
         <div className={s.CalculatorLeftPart}>
@@ -81,7 +81,7 @@ const CalculatorPage = () => {
           <RightSideBar />
         </aside>
       </section>
-    </>
+    </div>
   );
 };
 
