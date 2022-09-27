@@ -2,8 +2,6 @@
 
 .sidebar {
   display: flex;
-
-  
   padding-top: 91px;
   padding-left: 94px;
   padding-bottom: 91px;
@@ -30,18 +28,9 @@
   }
 }
 
-// background-image: url(/static/media/bgi-ridesidebar-tabl-1x.fe7225d….webp);
-//     background-position: 100% 100%;
-//     background-repeat: no-repeat;
-//     background-size: 350px 350px;
-
 .box {
   display: flex;
 }
-
-// .item {
-  
-// }
 
 .summary {
   margin-bottom: 40px;
@@ -80,27 +69,15 @@
 
 .summary__list {
   @media (max-width: 1280px) {
-    overflow: auto;
     margin-left: 40px;
   }
   @media (min-width: 1280px) {
-    overflow: auto;
     margin-left: 80px;
   }
 }
 
 .summary__listItem:not(:last-child),
-.item:not(:last-child), 
+.item:not(:last-child),
 .prodItem:not(:last-child) {
-    margin-bottom: 10px;
-  }
-  
-// .notRecommended {
-  
-// }
-  
-
-
-
-
-
+  margin-bottom: 10px;
+}
