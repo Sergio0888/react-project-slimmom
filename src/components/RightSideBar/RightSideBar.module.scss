@@ -8,14 +8,13 @@
   padding-left: 94px;
   padding-bottom: 91px;
 
-  @media (max-width: 1200px) {
-    flex-direction: column;
+  @media (max-width: 1280px) {
     background: url(../../images/background/back_for_tablet.png);
     background-position: 100% 100%;
     background-repeat: no-repeat;
     background-size: 350px 350px;
   }
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     width: 70%;
     padding-top: 80px;
     padding-left: 32px;
@@ -69,7 +68,7 @@
   letter-spacing: 0.04em;
   width: 288px;
 
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     width: 185px;
     height: 170px;
     overflow: auto;
