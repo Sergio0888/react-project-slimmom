@@ -100,8 +100,9 @@ const RegistrationForm = () => {
       <div className={s.from__block__btn}>
         <button
           onClick={onClickLoginBtn}
-          className={s.form__btn__active}
+          className={s.form__btn__disabled}
           type="button"
+          disabled
         >
           Login
         </button>

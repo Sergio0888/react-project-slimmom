@@ -15,6 +15,7 @@ const RightSideBar = () => {
 
 
   const newCurrentDate = () => {
+    const date = new Date();
     if (currentDate) {
       const a = currentDate.split('');
       a.splice(4, 1, '/');
@@ -23,7 +24,7 @@ const RightSideBar = () => {
 
       return b.join('');
     }
-    return;
+    return date.toISOString().slice(0, 10);
   };
 
   const newSummary = () => {
@@ -34,19 +35,21 @@ const RightSideBar = () => {
 
       const normalPercent = Math.floor(percentsOfDailyRate);
       const normalConsumed = Math.floor(kcalConsumed);
+      const normaKcal = Math.floor(kcalLeft);
+      const normalDay = Math.floor(dailyRate);
 
       return {
-        kcalLeft,
+        kcalLeft: normaKcal,
         kcalConsumed: normalConsumed,
-        dailyRate,
+        dailyRate: normalDay,
         percentsOfDailyRate: normalPercent,
       };
     }
     return {
-      kcalLeft: '000',
-      kcalConsumed: '000',
-      dailyRate: '000',
-      percentsOfDailyRate: '000',
+      kcalLeft: '0 ',
+      kcalConsumed: '0 ',
+      dailyRate: '0 ',
+      percentsOfDailyRate: '0 ',
     };
   };
 
@@ -83,8 +86,8 @@ const RightSideBar = () => {
             <div className={s.notRecommended}>
               <p className={s.summary__title}>Food not recommended</p>
       
-              {notRecommended?.length > 0 ? (
-                <ul className={s.prodList}>{notRecommended?.slice(0, 10).map(el => <li key={el} className={s.prodItem}>{el}</li>) ?? null}</ul>
+              {notRecommended && notRecommended.length > 0 ? (
+                <ul className={s.prodList}>{notRecommended.slice(0, 10).map(el => <li key={el} className={s.prodItem}>{el}</li>) ?? null}</ul>
               ) : (
               <p className={s.summary__subtitle}>
               Your diet will be displayed here
