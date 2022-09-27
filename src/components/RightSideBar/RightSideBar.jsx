@@ -85,8 +85,8 @@ const RightSideBar = () => {
             <div className={s.notRecommended}>
               <p className={s.summary__title}>Food not recommended</p>
       
-              {notRecommended?.length > 0 ? (
-                <ul className={s.prodList}>{notRecommended?.slice(0, 10).map(el => <li key={el} className={s.prodItem}>{el}</li>) ?? null}</ul>
+              {notRecommended && notRecommended.length > 0 ? (
+                <ul className={s.prodList}>{notRecommended.slice(0, 10).map(el => <li key={el} className={s.prodItem}>{el}</li>) ?? null}</ul>
               ) : (
               <p className={s.summary__subtitle}>
               Your diet will be displayed here

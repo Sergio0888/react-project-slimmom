@@ -4,7 +4,6 @@ import { useSelector } from 'react-redux';
 import ExitButton from 'shared/components/ExitButton/ExitButton';
 
 import { getUserName } from 'redux/auth/authSelectors';
-
 import { isLogin } from 'redux/auth/authSelectors';
 
 const UserInfo = () => {
