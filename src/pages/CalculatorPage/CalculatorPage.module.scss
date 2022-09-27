@@ -2,12 +2,13 @@
 
 .CalculatorPageWrapper {
   display: flex;
- 
+  align-items: baseline;
+
   @media (min-width: 1200px) {
     justify-content: space-between;
   }
   @media (max-width: 1200px) {
-    flex-direction: column;;
+    flex-direction: column;
   }
 }
 
@@ -23,7 +24,6 @@
   padding-right: 139px;
   @media (min-width: 1200px) {
     padding-bottom: 90px;
-
   }
   @media (max-width: 1200px) {
     padding-left: 32px;
@@ -37,19 +37,19 @@
 
 .text {
   font-size: 18px;
+  line-height: 26px;
   line-height: 1.4;
   margin-bottom: 32px;
+  font-family: 'Verdana';
+  font-style: normal;
+  font-weight: 700;
+  max-width: 280px;
 
-  @media (min-width: 480px) and (max-width: 1200px)  {
-    font-size: 34px;
-    margin-bottom: 68px;
-    max-width: 530px;
-  }
-  @media (max-width: 480px) {
-    font-family: 'Verdana';
-    font-style: normal;
+  @media (min-width: 768px) {
     font-weight: 700;
-    font-size: 18px;
-    line-height: 26px;
+    font-size: 34px;
+    line-height: 41px;
+    max-width: 600px;
+    margin-bottom: 68px;
   }
 }

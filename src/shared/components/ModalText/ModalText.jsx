@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 import Button from '../Button';
 import ModalList from './ModalList/ModalList';
 import s from '../../../components/Forms/DailyCaloriesForm/DailyCaloriesForm.module.scss';
+import { useSelector } from 'react-redux';
+import { isLogin } from 'redux/auth/authSelectors';
 
 const ModalText = ({ calories, list, onClick }) => {
+  const isLogged = useSelector(isLogin);
   return (
     <>
       <h2 className={s.modal_title}>
@@ -17,9 +20,15 @@ const ModalText = ({ calories, list, onClick }) => {
         <h3 className={s.modal_subTitle}>Foods you should not eat</h3>
         <ModalList list={list} />
       </div>
-      <NavLink to={'register'}>
-        <Button type="button" onClick={onClick} text="Start losing weight" />
-      </NavLink>
+      {!isLogged ? (
+        <NavLink to={'register'}>
+          <Button type="button" onClick={onClick} text="Start losing weight" />
+        </NavLink>
+      ) : (
+        <NavLink to={'/diary'}>
+          <Button type="button" onClick={onClick} text="Start losing weight" />
+        </NavLink>
+      )}
 
       <button
         type="button"
