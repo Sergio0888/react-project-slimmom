@@ -6,7 +6,7 @@
   @media (min-width: 1200px) {
     justify-content: space-between;
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     flex-direction: column;;
   }
 }
@@ -25,7 +25,7 @@
     padding-bottom: 90px;
 
   }
-  @media (max-width: 1200px) {
+  @media (max-width: 1280px) {
     padding-left: 32px;
     padding-bottom: 48px;
     padding-top: 100px;
@@ -40,7 +40,7 @@
   line-height: 1.4;
   margin-bottom: 32px;
 
-  @media (min-width: 480px) and (max-width: 1200px)  {
+  @media (min-width: 480px) and (max-width: 1280px)  {
     font-size: 34px;
     margin-bottom: 68px;
     max-width: 530px;

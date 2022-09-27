@@ -5,18 +5,15 @@ import ExitButton from 'shared/components/ExitButton/ExitButton';
 
 import { getUserName } from 'redux/auth/authSelectors';
 
-
 const UserInfo = () => {
   const user = useSelector(getUserName);
-  console.log(user)
 
-    return (
-      <div className={s.box}>
-        <p className={s.user}>{user}</p>
-        <ExitButton/>
-      </div>
-    );
-
+  return (
+    <div className={s.box}>
+      <p className={s.user}>{user}</p>
+      <ExitButton />
+    </div>
+  );
 };
 
 export default UserInfo;
