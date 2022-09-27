@@ -5,7 +5,7 @@ const PublicRoute = () => {
   const isUserLogin = useAuth();
 
   if (isUserLogin) {
-    return <Navigate to="/diary" />;
+    return <Navigate to="/calculator" />;
   }
   return <Outlet />;
 };

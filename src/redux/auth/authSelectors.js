@@ -5,7 +5,9 @@ export const getUserName = state => {
 };
 
 export const getUserId = store => {
-  return store.auth.user.user.id;
+  console.log(store.auth)
+  return store.auth.user.id;
 };
+
 
 export const isSid = state => state.auth.sid;

@@ -15,6 +15,7 @@ const RightSideBar = () => {
 
 
   const newCurrentDate = () => {
+    const date = new Date();
     if (currentDate) {
       const a = currentDate.split('');
       a.splice(4, 1, '/');
@@ -23,7 +24,7 @@ const RightSideBar = () => {
 
       return b.join('');
     }
-    return;
+    return date.toISOString().slice(0, 10);
   };
 
   const newSummary = () => {
@@ -45,10 +46,10 @@ const RightSideBar = () => {
       };
     }
     return {
-      kcalLeft: '000',
-      kcalConsumed: '000',
-      dailyRate: '000',
-      percentsOfDailyRate: '000',
+      kcalLeft: '0 ',
+      kcalConsumed: '0 ',
+      dailyRate: '0 ',
+      percentsOfDailyRate: '0 ',
     };
   };
 
