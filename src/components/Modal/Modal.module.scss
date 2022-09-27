@@ -24,6 +24,13 @@
 
 }
 
+@include mixins.mq(tablet) {
+    .backdrop {
+        top:0;
+        background: rgba(33, 33, 33, 0.12);
+    }
+}
+
 .modal {
     position: relative;
     border-radius: 10px;
