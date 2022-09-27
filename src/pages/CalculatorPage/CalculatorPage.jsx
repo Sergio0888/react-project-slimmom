@@ -1,7 +1,9 @@
 import { RightSideBar } from 'components/RightSideBar/RightSideBar';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { toggleModalRedux } from 'redux/modal/modal-slice';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { useModal } from 'shared/hooks/useModal';
 import { getUserId } from 'redux/auth/authSelectors';
 import { getDailyRateForUser } from 'shared/api/daily';
 import { updateSummaryAndnotAllowedProducts } from '../../redux/summary/summary-slice';
@@ -10,6 +12,9 @@ import DailyCaloriesForm from 'components/Forms/DailyCaloriesForm/DailyCaloriesF
 
 import s from './CalculatorPage.module.scss';
 import styles from '../DiaryPage/DiaryPage.module.scss';
+import Modal from 'components/Modal/Modal';
+import { useNavigate } from 'react-router';
+import ModalText from 'shared/components/ModalText';
 
 const initialState = {
   calories: null,
@@ -32,11 +37,13 @@ export const makeRandomProducts = arr => {
 
 const CalculatorPage = () => {
   const [state, setState] = useState(initialState);
+
+  const { calories, notAllowedProducts, isModal } = state;
   
   const userId = useSelector(getUserId);
-
+  const navigate = useNavigate();
   const dispatch = useDispatch();
-
+  const isModalOpen = useModal();
   const handleClick = async data => {
     
     const dataValuesToNumbers = {};
@@ -67,6 +74,19 @@ const CalculatorPage = () => {
     }
   };
 
+  useEffect(() => {
+    if (isModal) {
+      dispatch(toggleModalRedux());
+      setState(prevState => ({ ...prevState, isModal: false }));
+    }
+  }, [dispatch, isModal]);
+
+  const modalButtonClick = () => {
+    dispatch(toggleModalRedux());
+    setState(prevState => ({ ...prevState, isModal: false }));
+    return navigate('/diary');
+  };
+
   return (
     <div className={s.backgr}>
       <Header />
@@ -80,6 +100,15 @@ const CalculatorPage = () => {
         <aside className={styles.aside}>
           <RightSideBar />
         </aside>
+        {isModalOpen && (
+          <Modal>
+            <ModalText
+              calories={calories}
+              list={notAllowedProducts}
+              onClick={modalButtonClick}
+            />
+          </Modal>
+        )}
       </section>
     </div>
   );

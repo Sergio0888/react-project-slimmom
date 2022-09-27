@@ -34,11 +34,13 @@ const RightSideBar = () => {
 
       const normalPercent = Math.floor(percentsOfDailyRate);
       const normalConsumed = Math.floor(kcalConsumed);
+      const normaKcal = Math.floor(kcalLeft);
+      const normalDay = Math.floor(dailyRate);
 
       return {
-        kcalLeft,
+        kcalLeft: normaKcal,
         kcalConsumed: normalConsumed,
-        dailyRate,
+        dailyRate: normalDay,
         percentsOfDailyRate: normalPercent,
       };
     }
