@@ -17,7 +17,7 @@ import { useNavigate } from 'react-router';
 import ModalText from 'shared/components/ModalText';
 
 const initialState = {
-  calories: null,
+  calories: '',
   notAllowedProducts: [],
   isModal: false,
   loading: false,
@@ -41,11 +41,13 @@ const CalculatorPage = () => {
   const { calories, notAllowedProducts, isModal } = state;
   
   const userId = useSelector(getUserId);
+  console.log(userId)
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isModalOpen = useModal();
+
   const handleClick = async data => {
-    
+
     const dataValuesToNumbers = {};
     Object.entries(data).forEach(([key, value]) => {
       dataValuesToNumbers[key] = Number(value);

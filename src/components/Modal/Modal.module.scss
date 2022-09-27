@@ -11,6 +11,9 @@
     height: 100vh;
     
     background: rgba(33, 33, 33, 0.12);
+    @media (max-width: 480px) {
+        top: 0;
+    }
 }
 
 @include mixins.mq(tablet) {
@@ -18,6 +21,7 @@
         top: 0;
         background: rgba(33, 33, 33, 0.12);
     }
+
 }
 
 .modal {
